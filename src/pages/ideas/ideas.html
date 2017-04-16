@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{categoryTitle}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let entry of entries | async">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img *ngIf="entry.image!=''" src="{{entry.image}}" />
+        <img *ngIf="entry.image==''" src="{{categoryImage}}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{entry.title}}</h2>
+        <p>{{entry.description}}</p>
+      </ion-label>
+      <ion-checkbox clear item-right color="blue" checked="{{entry.status}}"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
