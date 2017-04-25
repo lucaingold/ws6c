@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Life Planner</ion-title>
-    
+
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
    <ion-fab top right edge #fab>
-    <button color="royal" ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <button color="royal" ion-fab><ion-icon name="add"></ion-icon></button>
     <ion-fab-list>
       <button ion-fab (click)="createCategory(fab)">
         <ion-icon name="md-image"></ion-icon>
@@ -17,8 +17,8 @@
   <ion-card *ngFor="let category of categories | async" (click)="showIdeas(category.$key)">
     <img [src]="category.image" />
     <div class="card-title">{{category.title}}</div>
-        
-        
+
+
     <div class="card-subtitle" (click)="showIdeas(category.$key)">{{category.entries.length}} Ideas</div>
   </ion-card>
 
