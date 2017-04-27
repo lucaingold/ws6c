@@ -8,20 +8,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'page-category',
   templateUrl: 'idea.html'
 })
-export class CreateCategoryPage {
-  categories: FirebaseListObservable<any>;
+export class CreateIdeaPage {
+  ideas: FirebaseListObservable<any>;
   form: any;
   title: string = '';
   description: string = '';
   imageUrl: any;
 
   constructor(public navCtrl: NavController, public af: AngularFire, private _FB: FormBuilder, public viewCtrl: ViewController) {
-    this.categories = this.af.database.list('/categories');
+    this.ideas = this.af.database.list('/categories');
     this.form = _FB.group({ 'title': ['', Validators.required], 'description': ['', Validators.required] });
   }
 
 sendPost() {
-    this.categories.push({
+    this.ideas.push({
       title: this.title,
       description: this.description
     });

@@ -3,10 +3,10 @@ import {NavController} from 'ionic-angular';
 import {Chart} from 'chart.js';
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-progress',
+  templateUrl: 'progress.html'
 })
-export class ContactPage {
+export class ProgressPage {
 
   @ViewChild('barCanvas') barCanvas;
   @ViewChild('doughnutCanvas') doughnutCanvas;

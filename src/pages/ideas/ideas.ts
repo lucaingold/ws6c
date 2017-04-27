@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { FabContainer } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { CreateIdeaPage } from '../create/idea/idea';
+
 
 
 @Component({
@@ -15,7 +19,7 @@ export class IdeasPage {
 
   entries: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,public modalCtr: ModalController) {
     this.categoryKey = navParams.get('categoryKey');
     // this.category = this.af.database.list('/categories/0/');
 
@@ -38,5 +42,15 @@ export class IdeasPage {
     //load entries
     this.entries = this.af.database.list('/categories/' + this.categoryKey + '/entries');
 
+  }
+
+ openModal() {
+    let modal = this.modalCtr.create(CreateIdeaPage);
+    modal.present();
+  }
+
+   createCategory(fab: FabContainer) {
+      this.openModal();
+      fab.close();
   }
 }
