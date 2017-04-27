@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Create Category</ion-title>
+    <ion-title>Create Idea</ion-title>
     <ion-buttons>
       <button ion-button (click)="dismiss()"> 
       <span showWhen="ios">Cancel</span> 
@@ -22,12 +22,12 @@
   <form [formGroup]="form" (ngSubmit)="sendPost()">
 
     <ion-item>
-      <ion-label stacked>Category Name:</ion-label>
+      <ion-label stacked>Idea Name:</ion-label>
       <ion-input type="text" formControlName="title" [(ngModel)]="title"></ion-input>
     </ion-item>
 
         <ion-item>
-      <ion-label stacked>Category Description:</ion-label>
+      <ion-label stacked>Idea Description:</ion-label>
       <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>
     </ion-item>
   </form>

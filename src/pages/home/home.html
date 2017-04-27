@@ -14,12 +14,10 @@
       </button>
     </ion-fab-list>
   </ion-fab>-->
-  <ion-card *ngFor="let category of categories | async" tappable (click)="showIdeas(category.$key)">
+  <ion-card tappable *ngFor="let category of categories | async"  (click)="showIdeas(category.$key)">
     <img [src]="category.image" />
     <div class="card-title">{{category.title}}</div>
-
-
-    <div class="card-subtitle" (click)="showIdeas(category.$key)">{{category.entries.length}} Ideas</div>
+    <div class="card-subtitle" >{{category.entries.length}} Ideas</div>
   </ion-card>
 
 </ion-content>

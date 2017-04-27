@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
-  selector: 'page-category',
+  selector: 'page-idea',
   templateUrl: 'idea.html'
 })
 export class CreateIdeaPage {
@@ -16,15 +16,15 @@ export class CreateIdeaPage {
   imageUrl: any;
 
   constructor(public navCtrl: NavController, public af: AngularFire, private _FB: FormBuilder, public viewCtrl: ViewController) {
-    this.ideas = this.af.database.list('/categories');
+    // this.ideas = this.af.database.list('/categories');
     this.form = _FB.group({ 'title': ['', Validators.required], 'description': ['', Validators.required] });
   }
 
 sendPost() {
-    this.ideas.push({
-      title: this.title,
-      description: this.description
-    });
+    // this.ideas.push({
+    //   title: this.title,
+    //   description: this.description
+    // });
     this.dismiss();
   }
 

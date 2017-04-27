@@ -11,6 +11,7 @@ import { IdeasPage } from '../pages/ideas/ideas';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { CreateCategoryPage } from '../pages/create/category/category';
+import { CreateIdeaPage } from '../pages/create/idea/idea';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -35,7 +36,8 @@ export const firebaseConfig = {
     HomePage,
     IdeasPage,
     TabsPage,
-    CreateCategoryPage
+    CreateCategoryPage,
+    CreateIdeaPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ export const firebaseConfig = {
     HomePage,
     IdeasPage,
     TabsPage,
-    CreateCategoryPage
+    CreateCategoryPage,
+    CreateIdeaPage
   ],
   providers: [
     StatusBar,
