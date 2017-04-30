@@ -7,15 +7,12 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-fab top right edge >
-    <button ion-fab color="royal">
-      <ion-icon name="add">
-        </ion-icon>
-        </button>
+     <ion-fab top right edge #fab>
+    <button color="royal" ion-fab><ion-icon name="add"></ion-icon></button>
     <ion-fab-list>
-      <button ion-fab><ion-icon name="md-image"></ion-icon></button>
-
+      <button ion-fab (click)="createIdea(fab)">
+        <ion-icon name="md-bulb"></ion-icon>
+      </button>
     </ion-fab-list>
   </ion-fab>
 

@@ -11,12 +11,15 @@ import { IdeasPage } from '../pages/ideas/ideas';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { CreateCategoryPage } from '../pages/create/category/category';
+import { CreateIdeaPage } from '../pages/create/idea/idea';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AngularFireModule } from 'angularfire2';
+
+import { Camera } from '@ionic-native/camera';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBaVs3ekmQfic76YVMyk94S5Q6u78jVjeI",
@@ -35,7 +38,8 @@ export const firebaseConfig = {
     HomePage,
     IdeasPage,
     TabsPage,
-    CreateCategoryPage
+    CreateCategoryPage,
+    CreateIdeaPage
   ],
   imports: [
     BrowserModule,
@@ -50,12 +54,14 @@ export const firebaseConfig = {
     HomePage,
     IdeasPage,
     TabsPage,
-    CreateCategoryPage
+    CreateCategoryPage,
+    CreateIdeaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Camera
   ]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Create Category</ion-title>
+    <ion-title>Create Idea</ion-title>
     <ion-buttons>
       <button ion-button (click)="dismiss()"> 
       <span showWhen="ios">Cancel</span> 
@@ -10,7 +10,9 @@
         </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only (click)="sendPost()" [disabled]="!form.valid"> 
+      <button ion-button icon-only (click)="sendPost()" > 
+      <!--<button ion-button icon-only (click)="sendPost()" [disabled]="!form.valid"> -->
+
              <ion-icon name="ios-paper-plane-outline"></ion-icon> 
       </button>
     </ion-buttons>
@@ -19,16 +21,38 @@
 
 
 <ion-content padding>
-  <form [formGroup]="form" (ngSubmit)="sendPost()">
-
+  <form [formGroup]="form" (ngSubmit)="sendPost()" >
     <ion-item>
-      <ion-label stacked>Category Name:</ion-label>
+      <ion-label stacked>Name:</ion-label>
       <ion-input type="text" formControlName="title" [(ngModel)]="title"></ion-input>
     </ion-item>
 
-        <ion-item>
-      <ion-label stacked>Category Description:</ion-label>
+    <ion-item>
+      <ion-label stacked>Description:</ion-label>
       <ion-input type="text" formControlName="description" [(ngModel)]="description"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Status:</ion-label>
+      <ion-input type="text" formControlName="status" [(ngModel)]="status"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Importance:</ion-label>
+      <ion-input type="text" formControlName="importance" [(ngModel)]="importance"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <!--<input type="hidden" name="image" formControlName="image" [(ngModel)]="imageUrl">
+      <img [src]="imageUrl" width="100%">-->
+      <span *ngIf="imageUrl">Picture taken!</span>
+      <button ion-button type="button" color="primary" (click)="takePhotoLibrary()">
+        Take a Picture
+      </button>
+    </ion-item>
+
+ 
+
+    <!--<button type="submit" block ion-button  [disabled]="!form.valid">test</button> -->
   </form>
 </ion-content>

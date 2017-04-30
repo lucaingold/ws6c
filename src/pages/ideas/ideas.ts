@@ -6,7 +6,6 @@ import { ModalController } from 'ionic-angular';
 import { CreateIdeaPage } from '../create/idea/idea';
 
 
-
 @Component({
   selector: 'page-ideas',
   templateUrl: 'ideas.html'
@@ -45,11 +44,11 @@ export class IdeasPage {
   }
 
  openModal() {
-    let modal = this.modalCtr.create(CreateIdeaPage);
+    let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
     modal.present();
   }
 
-   createCategory(fab: FabContainer) {
+   createIdea(fab: FabContainer) {
       this.openModal();
       fab.close();
   }
