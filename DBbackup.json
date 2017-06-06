@@ -1,0 +1,155 @@
+{
+  "categories" : [ {
+    "description" : "",
+    "entries" : [ {
+      "description" : "Die deutsche Rechtschreibung",
+      "id" : 1,
+      "image" : "http://www.rheinische-art.de/media/user/Bilder2011/Namen/08Duden/www_Duden_Buch_25.jpg",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Duden"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Don Quijote"
+    } ],
+    "image" : "http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg",
+    "title" : "Books"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "Portugal",
+      "id" : 1,
+      "image" : "http://www.destinationsports.ch/cgi-bin/424-bildnl-20151008094219.jpg",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Lissabon"
+    }, {
+      "description" : "Deutschland",
+      "id" : 2,
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/330px-Brandenburger_Tor_abends.jpg",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Berlin"
+    } ],
+    "image" : "https://blogs-images.forbes.com/robertadams/files/2016/03/the-best-travel-websites-in-the-world-1200x800.jpg?width=960",
+    "title" : "Trips"
+  }, null, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "Die deutsche Rechtschreibung",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Bucket List 1"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Bucket List 1"
+    } ],
+    "image" : "http://www.amongelite.com/wp-content/uploads/2016/04/bucketlist-1.jpg",
+    "title" : "Bucket List"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "bla",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Food 2"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Food 1"
+    } ],
+    "image" : "http://www.ubmi.net/wp-content/uploads/2016/10/temp2.jpg",
+    "title" : "Food"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "bla",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Movies 2"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Movies 1"
+    } ],
+    "image" : "http://www.aafh.com/wp-content/uploads/2015/07/location1.jpg",
+    "title" : "Locations"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "bla",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Movies 2"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Movies 1"
+    } ],
+    "image" : "http://moheban-ahlebeit.com/images/Film-Wallpaper/Film-Wallpaper-26.jpg",
+    "title" : "Movies"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "bla",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Music 2"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Music 1"
+    } ],
+    "image" : "http://kikomusic.com/wp-content/uploads/2016/12/music-colour-splash.jpg",
+    "title" : "Music"
+  }, {
+    "description" : "",
+    "entries" : [ {
+      "description" : "bla",
+      "id" : 1,
+      "image" : "",
+      "importance" : "3",
+      "status" : "false",
+      "title" : "Movies 2"
+    }, {
+      "description" : "Lorem Ipsum dolores",
+      "id" : 2,
+      "image" : "",
+      "importance" : "1",
+      "status" : "true",
+      "title" : "Movies 1"
+    } ],
+    "image" : "https://wallpaperbrowse.com/media/images/All-Games-4.png",
+    "title" : "Games"
+  } ]
+}
