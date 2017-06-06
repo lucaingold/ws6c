@@ -23,8 +23,8 @@ export class CreateIdeaPage {
     this.categoryKey = navParams.get('categoryKey');
     this.ideas = this.af.database.list('/categories/' + this.categoryKey +'/entries/');
     console.log(this.ideas);
-    this.form = _FB.group({ 
-      'title': ['', Validators.required], 
+    this.form = _FB.group({
+      'title': ['', Validators.required],
       'description': ['', Validators.required],
       'status': ['', Validators.required],
       'importance': ['', Validators.required]
@@ -36,7 +36,7 @@ sendPost() {
     this.ideas.push({
       title: this.title,
       description: this.description,
-      image: this.imageUrl
+      image: ''
     });
     this.dismiss();
   }
@@ -48,7 +48,7 @@ this.title="https://www.djamware.com/post/5855c96380aca7060f443065/ionic-2-fireb
     //   targetWidth: 500,
     //   correctOrientation: true,
     //   encodingType: this.camera.EncodingType.PNG,
-    //   sourceType: 0//0 = Photolibrary, 1 = Camera, 2 = Save to photoalbum 
+    //   sourceType: 0//0 = Photolibrary, 1 = Camera, 2 = Save to photoalbum
     // }).then((imageData) => {
     //   this.imageUrl = "data:image/jpeg;base64," + imageData;
     // }, (err) => { console.log(err); });
