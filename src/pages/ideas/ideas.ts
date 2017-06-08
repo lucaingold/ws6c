@@ -43,12 +43,12 @@ export class IdeasPage {
 
   }
 
-  openModal(isCreateModal: boolean) {
+  openModal(isCreateModal: boolean, entry) {
     if (isCreateModal) {
       let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
       modal.present();
-    } else{
-      // let modal = this.modalCtr.create(UpdateIdeaPage, {ideaId: this.,categoryKey: this.categoryKey});
+    } else {
+      // let modal = this.modalCtr.create(UpdateIdeaPage, {ideaId:entry. ,categoryKey: this.categoryKey});
       // modal.present();
     }
   }
@@ -60,15 +60,15 @@ export class IdeasPage {
   }
 
   createIdea(fab: FabContainer) {
-    this.openModal(true);
+    this.openModal(true, null);
     fab.close();
   }
 
   editIdea(entry) {
-    this.openModal(false);
+    this.openModal(false, entry);
   }
 
   deleteIdea(entry) {
-    this.openDeleteModal();
+    this.entries.remove(entry.$key);
   }
 }
