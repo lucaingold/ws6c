@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, ViewController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import {Component} from '@angular/core';
+import {NavController, ViewController, NavParams} from 'ionic-angular';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Camera, CameraOptions} from '@ionic-native/camera';
 
+import { Ionic2RatingModule } from 'ionic2-rating';
 
 @Component({
   selector: 'page-idea',
@@ -16,12 +17,13 @@ export class CreateIdeaPage {
   description: string = '';
   imageUrl: any;
   status: string = '';
-  importance: string = '';
+  importance: string = '2';
+
   categoryKey: any;
 
   constructor(public navCtrl: NavController, public af: AngularFire, private _FB: FormBuilder, public camera: Camera, public viewCtrl: ViewController, public navParams: NavParams) {
     this.categoryKey = navParams.get('categoryKey');
-    this.ideas = this.af.database.list('/categories/' + this.categoryKey +'/entries/');
+    this.ideas = this.af.database.list('/categories/' + this.categoryKey + '/entries/');
     console.log(this.ideas);
     this.form = _FB.group({
       'title': ['', Validators.required],
@@ -31,18 +33,33 @@ export class CreateIdeaPage {
     });
   }
 
-sendPost() {
-
+  sendPost() {
     this.ideas.push({
       title: this.title,
       description: this.description,
+      status: false,
       image: ''
     });
     this.dismiss();
   }
 
-  takePhotoLibrary(){
-this.title="https://www.djamware.com/post/5855c96380aca7060f443065/ionic-2-firebase-crud-example-part-2";    // this.camera.getPicture({
+  // sendPut(ideaId:string) {
+  //   this.ideas.update(ideaId, {
+  //     title: this.title,
+  //     description: this.description,
+  //     status: false,
+  //     image: ''
+  //   });
+  //   this.dismiss();
+  // }
+  //
+  // sendDelete(ideaId:string) {
+  //   this.ideas.remove(ideaId);
+  //   this.dismiss();
+  // }
+
+  takePhotoLibrary() {
+    this.title = "https://www.djamware.com/post/5855c96380aca7060f443065/ionic-2-firebase-crud-example-part-2";    // this.camera.getPicture({
     //   destinationType: this.camera.DestinationType.DATA_URL,
     //   targetHeight: 500,
     //   targetWidth: 500,

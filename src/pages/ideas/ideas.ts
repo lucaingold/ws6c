@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { FabContainer } from 'ionic-angular';
-import { ModalController } from 'ionic-angular';
-import { CreateIdeaPage } from '../create/idea/idea';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {FabContainer} from 'ionic-angular';
+import {ModalController} from 'ionic-angular';
+import {CreateIdeaPage} from '../create/idea/idea';
 
 
 @Component({
@@ -18,20 +18,20 @@ export class IdeasPage {
 
   entries: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire,public modalCtr: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public modalCtr: ModalController) {
     this.categoryKey = navParams.get('categoryKey');
     // this.category = this.af.database.list('/categories/0/');
 
     //TODO category as list with attributes
     // Load default category image
-    this.categoryImage = this.af.database.object('/categories/' + this.categoryKey + '/image', { preserveSnapshot: true });
+    this.categoryImage = this.af.database.object('/categories/' + this.categoryKey + '/image', {preserveSnapshot: true});
     this.categoryImage.subscribe((snapshot) => {
       if (snapshot.exists()) {
         this.categoryImage = snapshot.val();
       }
     });
 
-    this.categoryTitle = this.af.database.object('/categories/' + this.categoryKey + '/title', { preserveSnapshot: true });
+    this.categoryTitle = this.af.database.object('/categories/' + this.categoryKey + '/title', {preserveSnapshot: true});
     this.categoryTitle.subscribe((snapshot) => {
       if (snapshot.exists()) {
         this.categoryTitle = snapshot.val();
@@ -43,13 +43,34 @@ export class IdeasPage {
 
   }
 
- openModal() {
+  openModal(isCreateModal: boolean) {
+    if (isCreateModal) {
+      let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
+      modal.present();
+    } else{
+      // let modal = this.modalCtr.create(UpdateIdeaPage, {ideaId: this.,categoryKey: this.categoryKey});
+      // modal.present();
+    }
+  }
+
+
+  openDeleteModal() {
     let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
     modal.present();
   }
 
-   createIdea(fab: FabContainer) {
-      this.openModal();
-      fab.close();
+  createIdea(fab: FabContainer) {
+    this.openModal(true);
+    fab.close();
+  }
+
+  updateIdea(fab: FabContainer) {
+    this.openModal(false);
+    fab.close();
+  }
+
+  deleteIdea(fab: FabContainer) {
+    this.openDeleteModal();
+    fab.close();
   }
 }
