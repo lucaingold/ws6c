@@ -64,13 +64,11 @@ export class IdeasPage {
     fab.close();
   }
 
-  updateIdea(fab: FabContainer) {
+  editIdea(entry) {
     this.openModal(false);
-    fab.close();
   }
 
-  deleteIdea(fab: FabContainer) {
+  deleteIdea(entry) {
     this.openDeleteModal();
-    fab.close();
   }
 }

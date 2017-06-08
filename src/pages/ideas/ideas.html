@@ -7,36 +7,44 @@
 </ion-header>
 
 <ion-content>
-     <ion-fab top right edge #fab>
-    <button color="royal" ion-fab><ion-icon name="add"></ion-icon></button>
+  <ion-fab top right edge #fab>
+    <button color="royal" ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
     <ion-fab-list>
       <button ion-fab (click)="createIdea(fab)">
         <ion-icon name="md-bulb"></ion-icon>
       </button>
 
-      <button ion-fab (click)="updateIdea(fab)">
-        <ion-icon name="md-plus"></ion-icon>
-      </button>
-
-      <button ion-fab (click)="deleteIdea(fab)">
-        <ion-icon name="md-minus"></ion-icon>
-      </button>
-
-
     </ion-fab-list>
   </ion-fab>
 
-  <ion-list *ngFor="let entry of entries | async">
-    <ion-item>
-      <ion-thumbnail item-left>
-        <img *ngIf="entry.image!=''" src="{{entry.image}}" />
-        <img *ngIf="entry.image==''" src="{{categoryImage}}" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{entry.title}}</h2>
-        <p>{{entry.description}}</p>
-      </ion-label>
-      <ion-checkbox clear item-right color="blue" checked="{{entry.status}}"></ion-checkbox>
-    </ion-item>
-  </ion-list>
-</ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-list-header>My Contacts</ion-list-header>
+      <ion-item-sliding *ngFor="let entry of entries | async">
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img *ngIf="entry.image!=''" src="{{entry.image}}"/>
+            <img *ngIf="entry.image==''" src="{{categoryImage}}"/>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{entry.title}}</h2>
+            <p>{{entry.description}}</p>
+          </ion-label>
+          <ion-checkbox clear item-right color="blue" checked="{{entry.status}}"></ion-checkbox>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="primary" icon-left (click)="editIdea(entry)">
+            <ion-icon name="ios-create"></ion-icon>
+            Edit
+          </button>
+          <button ion-button color="danger" icon-left (click)="deleteIdea(entry)">
+            <ion-icon name="ios-trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+
