@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
 import {FabContainer} from 'ionic-angular';
 import {ModalController} from 'ionic-angular';
 import {CreateIdeaPage} from '../create/idea/idea';
+import {UpdateIdeaPage} from "../update/idea/idea";
 
 
 @Component({
@@ -48,8 +49,13 @@ export class IdeasPage {
       let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
       modal.present();
     } else {
-      // let modal = this.modalCtr.create(UpdateIdeaPage, {ideaId:entry. ,categoryKey: this.categoryKey});
-      // modal.present();
+
+
+      let modal2 = this.modalCtr.create(UpdateIdeaPage, {
+        entry: entry,
+        categoryKey: this.categoryKey
+      });
+      modal2.present();
     }
   }
 

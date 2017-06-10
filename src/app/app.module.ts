@@ -22,6 +22,7 @@ import { AngularFireModule } from 'angularfire2';
 import { Camera } from '@ionic-native/camera';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
+import {UpdateIdeaPage} from "../pages/update/idea/idea";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBaVs3ekmQfic76YVMyk94S5Q6u78jVjeI",
@@ -41,7 +42,8 @@ export const firebaseConfig = {
     IdeasPage,
     TabsPage,
     CreateCategoryPage,
-    CreateIdeaPage
+    CreateIdeaPage,
+    UpdateIdeaPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ export const firebaseConfig = {
     IdeasPage,
     TabsPage,
     CreateCategoryPage,
-    CreateIdeaPage
+    CreateIdeaPage,
+    UpdateIdeaPage
   ],
   providers: [
     StatusBar,
