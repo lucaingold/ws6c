@@ -1,6 +1,5 @@
 {
   "name": "lifeplanner",
   "app_id": "9e2bc1a3",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular"
 }

@@ -3,17 +3,17 @@
   <ion-navbar>
     <ion-title>Create Idea</ion-title>
     <ion-buttons>
-      <button ion-button (click)="dismiss()"> 
-      <span showWhen="ios">Cancel</span> 
+      <button ion-button (click)="dismiss()">
+      <span showWhen="ios">Cancel</span>
       <ion-icon name="md-close" showWhen="android,windows">
-        </ion-icon> 
+        </ion-icon>
         </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only (click)="sendPost()" > 
+      <button ion-button icon-only (click)="sendPost()" >
       <!--<button ion-button icon-only (click)="sendPost()" [disabled]="!form.valid"> -->
 
-             <ion-icon name="ios-paper-plane-outline"></ion-icon> 
+             <ion-icon name="ios-paper-plane-outline"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -45,13 +45,13 @@
     <ion-item>
       <!--<input type="hidden" name="image" formControlName="image" [(ngModel)]="imageUrl">
       <img [src]="imageUrl" width="100%">-->
-      <span *ngIf="imageUrl">Picture taken!</span>
+      <!--<span *ngIf="imageUrl">Picture taken!</span>-->
       <button ion-button type="button" color="primary" (click)="takePhotoLibrary()">
         Take a Picture
       </button>
     </ion-item>
 
- 
+
 
     <!--<button type="submit" block ion-button  [disabled]="!form.valid">test</button> -->
   </form>

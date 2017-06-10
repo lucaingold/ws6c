@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Archive
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content>
+    <ion-list>
+      <ion-item-sliding *ngFor="let entry of entries">
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img *ngIf="entry.image!=''" src="{{entry.image}}"/>
+            <img *ngIf="entry.image==''" src="{{categoryImage}}"/>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{entry.title}}</h2>
+            <p>{{entry.description}}</p>
+          </ion-label>
+          <ion-checkbox clear item-right color="blue" checked="{{entry.status}}"></ion-checkbox>
+        </ion-item>
+        <ion-item-options>
+          <!--<button ion-button color="primary" icon-left (click)="editIdea(entry)">-->
+            <!--<ion-icon name="ios-create"></ion-icon>-->
+            <!--Edit-->
+          <!--</button>-->
+          <!--<button ion-button color="danger" icon-left (click)="deleteIdea(entry)">-->
+            <!--<ion-icon name="ios-trash"></ion-icon>-->
+            <!--Delete-->
+          <!--</button>-->
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+
