@@ -42,6 +42,13 @@
       <ion-input type="text" formControlName="importance" [(ngModel)]="importance"></ion-input>
     </ion-item>
 
+    <ion-item *ngIf="imageUrl">
+      <ion-label stacked>Preview:</ion-label>
+    </ion-item>
+
+    <img style="width: 100%;" [src]="imageUrl" *ngIf="imageUrl"/>
+
+
     <ion-item>
       <!--<input type="hidden" name="image" formControlName="image" [(ngModel)]="imageUrl">
       <img [src]="imageUrl" width="100%">-->
