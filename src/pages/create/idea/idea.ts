@@ -55,7 +55,7 @@ export class CreateIdeaPage {
       title: this.title,
       description: this.description,
       status: false,
-      image: this.imageUrl
+      image: ''
     });
     this.dismiss();
   }
