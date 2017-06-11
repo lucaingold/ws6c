@@ -19,7 +19,6 @@
         </ion-item>
 
           <ion-item *ngFor="let e of category.entries">
-            <p>TEST</p>
             <ion-thumbnail item-left>
               <img *ngIf="e.image!=''" src="{{e.image}}"/>
               <img *ngIf="e.image==''" src="{{category.categoryImage}}"/>

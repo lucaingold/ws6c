@@ -77,4 +77,9 @@ export class IdeasPage {
   deleteIdea(entry) {
     this.entries.remove(entry.$key);
   }
+
+  updateCheckbox(entry) {
+     this.entries.update(entry.$key, {status: entry.status});
+    console.log(entry.status);
+  }
 }
