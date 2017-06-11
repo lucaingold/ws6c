@@ -24,6 +24,9 @@ import { Camera } from '@ionic-native/camera';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import {UpdateIdeaPage} from "../pages/update/idea/idea";
 
+import { ChartsModule } from 'ng2-charts';
+
+
 export const firebaseConfig = {
     apiKey: "AIzaSyBaVs3ekmQfic76YVMyk94S5Q6u78jVjeI",
     authDomain: "lifeplanner-fde5e.firebaseapp.com",
@@ -49,6 +52,7 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     Ionic2RatingModule,
+    ChartsModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
