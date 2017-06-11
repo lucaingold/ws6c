@@ -26,18 +26,19 @@ export class ProgressPage {
   };
 
 
-  chartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-
-  chartLabels: string[] = ['Test 1', 'Test 2', 'Test 3', 'Test 4'];
   chartType: string = 'bar';
-  chartLegend: boolean = true;
 
   chartData: any[] = [
-    { data: [75, 80, 45, 100], label: 'Student A' },
-    { data: [80, 55, 75, 95], label: 'Student B' }
+    {
+      label: "Closed",
+      fillColor: "blue",
+      data: [3,2]
+    },
+    {
+      label: "Open",
+      fillColor: "red",
+      data: [4,4]
+    }
   ];
 
   @ViewChild('doughnutCanvas') doughnutCanvas;

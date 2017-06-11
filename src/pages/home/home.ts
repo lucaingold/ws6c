@@ -21,7 +21,6 @@ export class HomePage {
   }
 
   public showIdeas(categoryKey: string) {
-    // alert('Open ' + photoKey);
     this.navCtrl.push(IdeasPage, { categoryKey: categoryKey });
   }
 
