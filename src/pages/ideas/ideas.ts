@@ -41,7 +41,6 @@ export class IdeasPage {
 
     //load entries
     this.entries = this.af.database.list('/categories/' + this.categoryKey + '/entries');
-
   }
 
   openModal(isCreateModal: boolean, entry) {
@@ -49,8 +48,6 @@ export class IdeasPage {
       let modal = this.modalCtr.create(CreateIdeaPage, {categoryKey: this.categoryKey});
       modal.present();
     } else {
-
-
       let modal2 = this.modalCtr.create(UpdateIdeaPage, {
         entry: entry,
         categoryKey: this.categoryKey
