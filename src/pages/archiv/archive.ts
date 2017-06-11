@@ -11,6 +11,7 @@ import {AngularFire, FirebaseListObservable} from "angularfire2";
 
 export class ArchivePage {
   categories: FirebaseListObservable<any>;
+  entriesDB: FirebaseListObservable<any>;
   entries: any = [];
   dataSummary: any;
 
@@ -19,89 +20,46 @@ export class ArchivePage {
 
     this.categories = this.af.database.list('/categories');
 
+    this.loadData();
+
+
+  }
+
+  ionViewWillEnter() {
+    this.loadData();
+  }
+
+
+  loadData(){
+    this.entries=[];
     this.categories.subscribe(categories => {
       this.dataSummary = categories.map(category => {
-
         let entries = Object.keys(category.entries).map(function (key) {
           return category.entries[key];
         });
 
         let tmp = entries.filter(e => e.status == true);
 
-        if (tmp.length>0){
-          console.log(tmp);
 
+        if (tmp.length > 0) {
           let e = {
-            "categoryImage":category.image,
+            "categoryImage": category.image,
             "title": category.title,
             "entries": tmp
           };
           this.entries.push(e);
-        // console.log(tmp);
-
         }
-
-
         return [tmp];
-        //   let entry = Object.keys(entries).map(function (key) {
-        //     return entries[key];
-        //   });
-        //
-        //   let count = 0;
-        //   entry.forEach(e => {
-        //     console.log(e.status);
-        //     if (e.status === false) ++count;
-        //   });
-        //
-        //   return [category.title, count];
-        // });
       });
-
     });
-
-    console.log(this.entries);
-
-
-    // this.entries.forEach(e => console.log());
-    // this.categories.forEach(c=>console.log(c));
-
-    // this.categories.subscribe(categories => {
-    //   categories.forEach(category => {
-    //
-    //     let e = Object.keys(category.entries).map(function (key) {
-    //       return category.entries[key];
-    //     });
-    //
-    //     let tmp=[];
-    //     Object.keys(e).forEach(function (key) {
-    //       if (e[key].status) {
-    //         // console.log(e[key]);
-    //         tmp.push(e[key]);
-    //         this.entries.push(e[key]);
-    //
-    //         return e[key];
-    //       }
-    //     });
-    //
-    //   });
-    //   console.log(this.entries);
-    // });
-
-    // this.categories.subscribe(categories => {
-    //   let dataSummary = categories.map(category => {
-    //     let entry = category.entries;
-    //
-    //     entry.forEach(ent => {
-    //       if (ent.status == 'true') {
-    //         this.entries.push(ent);
-    //       }
-    //     });
-    //   })
-    // });
-
   }
 
-  // deleteIdea(entry) {
-  //   this.entries.(entry.$key);
+  // updateCheckbox(entry) {
+  //
+  //   this.entriesDB = this.af.database.list('/categories/'+entry.cat_id+'/entries/'+entry.$key);
+  //
+  //
+  //   // this.entriesDB.update(entry.$key, {status: entry.status});
+  //   // console.log(entry.status);
   // }
 }

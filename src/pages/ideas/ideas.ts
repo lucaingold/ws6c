@@ -80,6 +80,6 @@ export class IdeasPage {
 
   updateCheckbox(entry) {
      this.entries.update(entry.$key, {status: entry.status});
-    console.log(entry.status);
+    // console.log(entry.status);
   }
 }
